@@ -4,7 +4,8 @@
   "description": "Proxy server",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "lint": "eslint --config .eslintrc.js src *.js",
+    "app": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,9 @@
     "url": "https://github.com/SEEK-Jobs/https-proxy-server/issues"
   },
   "homepage": "https://github.com/SEEK-Jobs/https-proxy-server#readme",
-  "devDependencies": {    
+  "devDependencies": {
+    "babel-eslint": "^6.0.5",
+    "eslint": "^1.10.2",
     "http-shutdown": "^1.0.3"
   }
 }
