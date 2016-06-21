@@ -1,0 +1,22 @@
+{
+  "name": "https-proxy-server",
+  "version": "1.0.0",
+  "description": "Proxy server",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEEK-Jobs/https-proxy-server.git"
+  },
+  "author": "Kunwardeep Singh Bedi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SEEK-Jobs/https-proxy-server/issues"
+  },
+  "homepage": "https://github.com/SEEK-Jobs/https-proxy-server#readme",
+  "devDependencies": {    
+    "http-shutdown": "^1.0.3"
+  }
+}
