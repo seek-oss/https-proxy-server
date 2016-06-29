@@ -2,6 +2,7 @@
 const http = require('http');
 const net = require('net');
 const urlParser = require('url');
+const userResponseHeaders = require('./headers/userResponseHeaders.json');
 require('http-shutdown').extend();
 
 function parseUrlFromString(url, defaultPort) {
@@ -70,6 +71,10 @@ function httpUserRequestHandler(userRequest, userResponse) {
 
   const proxyRequest = http.request(options, function(proxyResponse) {
     const body = [];
+    userResponseHeaders.forEach(function(header) {
+      userResponse.setHeader(header.name, header.value);
+    });
+
     const headers = proxyResponse.headers;
     userResponse.writeHead(
       proxyResponse.statusCode,
