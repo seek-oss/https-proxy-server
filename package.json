@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/SEEK-Jobs/https-proxy-server#readme",
   "config": {
-   "port": "9998",
-   "logFileLocation":""
- },
+    "port": "9998",
+    "logFileLocation": ""
+  },
   "devDependencies": {
     "babel-eslint": "^6.0.5",
-    "eslint": "^1.10.2",
+    "eslint": "^1.10.2"
+  },
+  "dependencies": {
     "http-shutdown": "^1.0.3"
   }
 }
