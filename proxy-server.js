@@ -113,7 +113,8 @@ function httpUserRequestHandler(userRequest, userResponse) {
 }
 
 module.exports = function startProxy() {
-  const port = 9998;
+  const portFromConfig = process.env.npm_package_config_port;
+  const port = portFromConfig !== undefined ? portFromConfig : 9998;
 
   console.log(`Starting proxy server on port ${port}`);
 
