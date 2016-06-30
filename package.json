@@ -19,7 +19,8 @@
   "homepage": "https://github.com/SEEK-Jobs/https-proxy-server#readme",
   "config": {
     "port": "9998",
-    "logFileLocation": ""
+    "logFileLocation": "",
+    "userResponseHeadersFile":"./headers/userResponseHeaders.json"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.5",

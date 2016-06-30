@@ -1,4 +1,3 @@
 [
-    { "name" : "isProxyOn","value":"true"},
-    { "name" : "Content-Security-Policy-Report-Only","value":"default-src 'self' https:; report-uri https://reportingEndPoint"}
-]
+    { "name" : "isProxyOnnnnnnnn","value":"true"}
+  ]

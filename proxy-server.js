@@ -2,7 +2,9 @@
 const http = require('http');
 const net = require('net');
 const urlParser = require('url');
-const userResponseHeaders = require('./headers/userResponseHeaders.json');
+const userResponseHeadersLoader = require('./scripts/load-user-response-headers');
+const userResponseHeaders = userResponseHeadersLoader();
+
 require('http-shutdown').extend();
 
 function parseUrlFromString(url, defaultPort) {
