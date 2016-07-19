@@ -8,7 +8,7 @@ nconf.defaults({
 });
 
 module.exports = function loadConfigs() {
-  const baseLoc = __dirname;
+  const baseLoc = process.env.PWD;
   const headersFolderLoc = nconf.get('headersFolderLocation');
   const userResponseHeadersFile = nconf.get('userResponseHeadersFile');
   nconf.set('userResponseHeadersFile', path.join(baseLoc, headersFolderLoc, userResponseHeadersFile));
