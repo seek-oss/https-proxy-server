@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path');
 const nconf = require('nconf');
 nconf.file('config.json');
 nconf.defaults({
@@ -7,9 +7,9 @@ nconf.defaults({
   'userResponseHeadersFile': 'userResponseHeaders.json'
 });
 
-module.exports = function loadConfigs() {  
-  const baseLoc =  __dirname;
-  const headersFolderLoc =  nconf.get('headersFolderLocation');
-  const userResponseHeadersFile =  nconf.get('userResponseHeadersFile');
-  nconf.set('userResponseHeadersFile',path.join(baseLoc,headersFolderLoc,userResponseHeadersFile)) ;
+module.exports = function loadConfigs() {
+  const baseLoc = __dirname;
+  const headersFolderLoc = nconf.get('headersFolderLocation');
+  const userResponseHeadersFile = nconf.get('userResponseHeadersFile');
+  nconf.set('userResponseHeadersFile', path.join(baseLoc, headersFolderLoc, userResponseHeadersFile));
 };
