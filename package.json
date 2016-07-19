@@ -2,7 +2,7 @@
   "name": "https-proxy-server",
   "version": "1.0.0",
   "description": "Proxy server",
-  "main": "index.js",
+  "main": "proxy-server.js",
   "scripts": {
     "setup": "bash scripts/git-hooks/install.sh",
     "lint": "eslint --config .eslintrc.js src *.js",

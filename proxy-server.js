@@ -5,6 +5,8 @@ const net = require('net');
 const urlParser = require('url');
 const userResponseHeadersLoader = require('./scripts/load-user-response-headers');
 const userResponseHeaders = userResponseHeadersLoader();
+const loadConfig = require('./config');
+loadConfig();
 require('http-shutdown').extend();
 
 function parseUrlFromString(url, defaultPort) {
