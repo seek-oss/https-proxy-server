@@ -1,5 +1,0 @@
-{
-  "port": "9998",
-  "headersFolderLocation": "./headers",
-  "userResponseHeadersFile": "userResponseHeaders.json"
-}
