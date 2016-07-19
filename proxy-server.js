@@ -1,10 +1,10 @@
 'use strict';
+const nconf = require('nconf');
 const http = require('http');
 const net = require('net');
 const urlParser = require('url');
 const userResponseHeadersLoader = require('./scripts/load-user-response-headers');
 const userResponseHeaders = userResponseHeadersLoader();
-
 require('http-shutdown').extend();
 
 function parseUrlFromString(url, defaultPort) {
@@ -115,8 +115,9 @@ function httpUserRequestHandler(userRequest, userResponse) {
 }
 
 module.exports = function startProxy() {
-  const portFromConfig = process.env.npm_package_config_port;
-  const port = portFromConfig !== undefined ? portFromConfig : 9998;
+  //const userPort =
+  //const defaultPort = nconf.get('DEFAULT:port');
+  const port = nconf.get('port');// userPort !== undefined ? userPort : defaultPort;
 
   console.log(`Starting proxy server on port ${port}`);
 

@@ -1,4 +1,6 @@
 'use strict';
+ const loadConfig = require('./config');
+ loadConfig();
 const startProxy = require('./proxy-server');
 const proxyServer = startProxy();
 

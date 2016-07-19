@@ -17,16 +17,12 @@
     "url": "https://github.com/SEEK-Jobs/https-proxy-server/issues"
   },
   "homepage": "https://github.com/SEEK-Jobs/https-proxy-server#readme",
-  "config": {
-    "port": "9998",
-    "logFileLocation": "",
-    "userResponseHeadersFile":"./headers/userResponseHeaders.json"
-  },
   "devDependencies": {
     "babel-eslint": "^6.0.5",
     "eslint": "^1.10.2"
   },
   "dependencies": {
-    "http-shutdown": "^1.0.3"
+    "http-shutdown": "^1.0.3",
+    "nconf": "^0.8.4"
   }
 }
