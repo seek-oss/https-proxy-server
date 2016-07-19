@@ -2,14 +2,17 @@ const path = require('path');
 const nconf = require('nconf');
 nconf.file('config.json');
 nconf.defaults({
-  'port': '9999',
-  'headersFolderLocation': './headers',
-  'userResponseHeadersFile': 'userResponseHeaders.json'
+  'proxySettings': {
+    'port': '9999',
+    'headersFolderLocation': './headers',
+    'userResponseHeadersFile': 'userResponseHeaders.json'
+  }
 });
 
 module.exports = function loadConfigs() {
   const baseLoc = process.env.PWD;
-  const headersFolderLoc = nconf.get('headersFolderLocation');
-  const userResponseHeadersFile = nconf.get('userResponseHeadersFile');
+  const headersFolderLoc = nconf.get('proxySettings:headersFolderLocation');
+  const userResponseHeadersFile = nconf.get('proxySettings:userResponseHeadersFile');
   nconf.set('userResponseHeadersFile', path.join(baseLoc, headersFolderLoc, userResponseHeadersFile));
+  nconf.set('proxyPort', nconf.get('proxySettings:port'));
 };

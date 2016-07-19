@@ -118,7 +118,7 @@ function httpUserRequestHandler(userRequest, userResponse) {
 }
 
 module.exports = function startProxy() {
-  const port = nconf.get('port');
+  const port = nconf.get('proxyPort');
 
   console.log(`Starting proxy server on port ${port}`);
 
