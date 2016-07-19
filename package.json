@@ -4,6 +4,7 @@
   "description": "Proxy server",
   "main": "index.js",
   "scripts": {
+    "setup": "bash scripts/git-hooks/install.sh",
     "lint": "eslint --config .eslintrc.js src *.js",
     "app": "node index.js"
   },
