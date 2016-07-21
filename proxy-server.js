@@ -4,11 +4,10 @@ const nconf = require('nconf');
 const http = require('http');
 const net = require('net');
 const urlParser = require('url');
-const loadConfig = require('./config');
-loadConfig();
 const userResponseHeadersLoader = require('./scripts/load-user-response-headers');
 const userResponseHeaders = userResponseHeadersLoader();
 require('http-shutdown').extend();
+require('./config');
 
 function parseUrlFromString(url, defaultPort) {
   const parsedUrl = urlParser.parse(url);
