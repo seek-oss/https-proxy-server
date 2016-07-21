@@ -1,8 +1,13 @@
-const defaultConfig = require('./default-config.json');
 const path = require('path');
 const nconf = require('nconf');
 nconf.file('config.json');
-nconf.defaults(defaultConfig);
+nconf.defaults({
+  'proxySettings': {
+    'port': '7777',
+    'headersFolderLocation': './headers',
+    'userResponseHeadersFile': 'userResponseHeaders.json'
+  }
+});
 
 const baseLoc = process.env.PWD;
 const headersFolderLoc = nconf.get('proxySettings:headersFolderLocation');
