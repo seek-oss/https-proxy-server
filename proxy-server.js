@@ -1,5 +1,4 @@
 'use strict';
-
 const nconf = require('nconf');
 const http = require('http');
 const net = require('net');
@@ -7,7 +6,7 @@ const urlParser = require('url');
 const userResponseHeadersLoader = require('./scripts/load-user-response-headers');
 const userResponseHeaders = userResponseHeadersLoader();
 require('http-shutdown').extend();
-require('./config');
+const Config = require('./config');
 
 function parseUrlFromString(url, defaultPort) {
   const parsedUrl = urlParser.parse(url);
@@ -117,8 +116,7 @@ function httpUserRequestHandler(userRequest, userResponse) {
 }
 
 module.exports = function startProxy() {
-  const port = nconf.get('proxyPort');
-
+  const port = new Config().getProxyPort();
   console.log(`Starting proxy server on port ${port}`);
 
   const server = http
