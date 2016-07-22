@@ -5,7 +5,7 @@ A simple https proxy server
   * Let's you modify http user response
 
 To Do
-Modify https user response
+  * Modify https user response
 
 ## Getting started
 The project is a Node.js project, so getting up and running is as simple as installing the apps dependencies and starting up a local dev server.
@@ -31,7 +31,7 @@ $ npm start
 ```
 
 ### Config Options
-The project offers the following default config. To override these values create a config.json in your root folder, similar to default-config.json from this project. The headersFolderLocation is relative to the root folder and the userResponseHeadersFile name of the headerfile in this folder. Sample file is in the headers folder of this project. Current defaults :
+The project offers the following default config. To override these values create a config.json in your root folder, similar to sample-config.json from this project. The headersFolderLocation(mandatory) is relative to the root folder and the userResponseHeadersFile(mandatory) name of the headerfile in this folder. Sample file is in the headers folder of this project. Current defaults :
   * port: 7777
   * headersFolderLocation: ./headers
   * userResponseHeadersFile: userResponseHeaders.json
