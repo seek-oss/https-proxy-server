@@ -6,7 +6,7 @@
   "scripts": {
     "setup": "bash scripts/git-hooks/install.sh",
     "lint": "eslint --config .eslintrc.js \"**/*.js\"",
-    "app": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
