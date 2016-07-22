@@ -6,7 +6,8 @@ nconf.defaults({
   'proxySettings': {
     'port': '7777',
     'headersFolderLocation': './headers',
-    'userResponseHeadersFile': 'userResponseHeaders.json'
+    'userResponseHeadersFile': 'userResponseHeaders.json',
+    'debug': false
   }
 });
 
@@ -18,6 +19,7 @@ module.exports = class Config {
 
     const _userResponseHeadersFile = path.join(baseLoc, headersFolderLoc, userResponseHeadersFileName);
     const _proxyPort = nconf.get('proxySettings:port');
+    const _debug = nconf.get('proxySettings:debug');
 
     this.getProxyPort = function() {
       return _proxyPort;
@@ -25,6 +27,10 @@ module.exports = class Config {
 
     this.getUserResponseHeadersFile = function() {
       return _userResponseHeadersFile;
+    };
+
+    this.isDebugSet = function() {
+      return _debug;
     };
   }
 };

@@ -7,14 +7,16 @@ const userResponseHeadersLoader = require('./scripts/load-user-response-headers'
 const userResponseHeaders = userResponseHeadersLoader();
 require('http-shutdown').extend();
 const Config = require('./config');
-
+const debug = new Config().isDebugSet();
 function parseUrlFromString(url, defaultPort) {
   const parsedUrl = urlParser.parse(url);
   const host = parsedUrl.hostname;
   let port = parsedUrl.port === null ? defaultPort : parsedUrl.port;
   port = parseInt(port, 10);
   const path = parsedUrl.path;
-  console.log(url);
+  if (debug) {
+    console.log(url);
+  }
   return { host, port, path };
 }
 
@@ -47,12 +49,16 @@ function httpsUserRequestHandler(userRequest, requestSocket, bodyhead) {
 
   proxySocket.on('error', function(error) {
     requestSocket.write(`HTTP/'${httpVersion} 500 Connection error\r\n\r\n`);
-    console.log(`ERROR ON PROXY SOCKET - {error}`);
+    if (debug) {
+      console.log(`ERROR ON PROXY SOCKET - {error}`);
+    }
     requestSocket.end();
   });
 
   requestSocket.on('error', function(error) {
-    console.log(`ERROR ON REQUEST SOCKET - ${error}`);
+    if (debug) {
+      console.log(`ERROR ON REQUEST SOCKET - ${error}`);
+    }
     proxySocket.end();
   });
 }
@@ -90,6 +96,7 @@ function httpUserRequestHandler(userRequest, userResponse) {
 
     proxyResponse.on('end', function() {
       const data = Buffer.concat(body);
+      // Add ability to modify body
       const modifiedBody = data;
       userResponse.end(modifiedBody);
     });

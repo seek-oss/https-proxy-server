@@ -5,7 +5,7 @@
   "main": "proxy-server.js",
   "scripts": {
     "setup": "bash scripts/git-hooks/install.sh",
-    "lint": "eslint --config .eslintrc.js src *.js",
+    "lint": "eslint --config .eslintrc.js \"**/*.js\"",
     "app": "node index.js"
   },
   "repository": {

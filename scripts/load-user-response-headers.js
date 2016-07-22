@@ -1,8 +1,8 @@
 'use strict';
 const nconf = require('nconf');
-const config = require('./../config');
-const responseHeaderFile = new config().getUserResponseHeadersFile();
+const Config = require('./../config');
+const responseHeaderFile = new Config().getUserResponseHeadersFile();
 
-module.exports = function loadUserResponseHeaders(){
-   return require(responseHeaderFile);
+module.exports = function loadUserResponseHeaders() {
+  return require(responseHeaderFile);
 };
