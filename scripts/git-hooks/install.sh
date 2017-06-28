@@ -1,10 +1,9 @@
-#!/bin/sh
+#!/bin/sh -e
 
-set -e
+PRE_COMMIT=".git/hooks/pre-commit"
 
-PRE_COMMIT=.git/hooks/pre-commit
 
-cat > $PRE_COMMIT <<- EOM
+cat >$PRE_COMMIT <<- EOM
 #!/bin/sh
 
 if [ "\$SKIP_LINT" != "true" ]; then

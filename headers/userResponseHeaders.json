@@ -1,3 +1,6 @@
 [
-    { "name" : "isProxyOn","value":"true"}
-  ]
+    {
+        "name" : "isProxyOn",
+        "value":"true"
+    }
+]

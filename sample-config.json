@@ -1,6 +1,6 @@
 {
   "proxySettings": {
-    "port": "9998",
+    "port": "7777",
     "headersFolderLocation": "./headers",
     "userResponseHeadersFile": "userResponseHeaders.json",
     "debug": false
